@@ -14,8 +14,7 @@
 #include <SHT1x.h>
 
 #define ESP8266_PLATFORM
-//#include <M2XStreamClient/M2XStreamClient.h>
-#include <M2XStreamClient.h>
+#include <M2XStreamClient/M2XStreamClient.h>
 
 // WiFi setttings
 const char* ssid = "Your AP's SSID";
