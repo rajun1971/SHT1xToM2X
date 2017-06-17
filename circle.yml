@@ -1,6 +1,8 @@
 dependencies:
+    cache_directories:
+        - "~/.platformio"
     pre:
-        # Install the latest stable PlatformIO
+        # Install the latest develop PlatformIO
         - sudo pip install -U https://github.com/platformio/platformio-core/archive/develop.zip
 
 test:
