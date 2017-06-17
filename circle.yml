@@ -5,4 +5,4 @@ dependencies:
 
 test:
     override:
-        -  platformio ci --board=esp32dev --board=esp_wroom_02
+        -  platformio ci --board=esp32dev --board=esp_wroom_02 src/SHT1xToM2X.cpp
