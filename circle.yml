@@ -1,8 +1,8 @@
 dependencies:
     pre:
         # Install the latest stable PlatformIO
-        - sudo pip install -U platformio
+        - sudo pip install -U https://github.com/platformio/platformio-core/archive/develop.zip
 
 test:
     override:
-        -  platformio ci --board=esp32dev --board=esp_wroom_02 src/SHT1xToM2X.cpp
+        - platformio ci --project-conf platformio.ini --board=esp32dev --board=esp_wroom_02 src/SHT1xToM2X.cpp
