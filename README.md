@@ -1,0 +1,2 @@
+# SHT1xToM2X
+Sensirionの温湿度センサーSHT1xをつないだESP-WROOM-02またはESP32からAT&amp;TのIoTサービスM2Xに温湿度データを送信するアプリケーションです。
