@@ -15,7 +15,10 @@ int SimpleM2XSender::sendFloatData(
 {
     if (_client->connect(M2X_HOST, M2X_PORT))
     {
-        String valueString = "{\"value\":\"" + value + "\"}";
+        String valueString =
+            String("{\"value\":\"") +
+            String(value) + 
+            String("\"}");
         writePutHeader(deviceId, streamName, valueString.length());
         _client->println(valueString);
     }
