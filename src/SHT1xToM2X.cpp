@@ -13,8 +13,7 @@
 
 #include <SHT1x.h>
 
-#define ESP8266_PLATFORM
-#include <M2XStreamClient/M2XStreamClient.h>
+#include <SimpleM2XSender.h>
 
 // WiFi setttings
 const char* ssid = "Your AP's SSID";
@@ -26,7 +25,8 @@ const char* deviceId = "Your device id"; // Device you want to push to
 const char* streamNameTemp = "Your stream id for temparature"; // Stream you want to push to
 const char* streamNameHum = "Your stream id for humidity"; // Stream you want to push to
 WiFiClient client;
-M2XStreamClient m2xClient(&client, m2xKey);
+
+SimpleM2XSender m2xClient(&client, m2xKey);
 
 // SHT1x settings
 #define dataPin  13
@@ -64,10 +64,10 @@ void loop() {
   Serial.print(humidity);
   Serial.println("%");
 
-  int response = m2xClient.updateStreamValue(deviceId, streamNameTemp, temp_c);
+  int response = m2xClient.sendFloatData(deviceId, streamNameTemp, temp_c);
   Serial.print("M2x client response code: ");
   Serial.println(response);
-  response = m2xClient.updateStreamValue(deviceId, streamNameHum, humidity);
+  response = m2xClient.sendFloatData(deviceId, streamNameHum, humidity);
   Serial.print("M2x client response code: ");
   Serial.println(response);
 
