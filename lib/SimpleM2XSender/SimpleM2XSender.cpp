@@ -4,8 +4,6 @@
 
 static const char* M2X_HOST = "api-m2x.att.com";
 static const int M2X_PORT = 80;
-static const int BUF_SIZE = 32;
-static char buf[BUF_SIZE];
 
 int SimpleM2XSender::sendFloatData(
     const char* deviceId,
